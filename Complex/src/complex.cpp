@@ -257,51 +257,51 @@ double Complex::modulus() const {
 	return sqrt(r_ + i_);
 }
 //FOR TESTING - all cases here work
-int main() {
-	string temp = "(i)";
-	cout << "Type a correctly formatted complex #" << endl;
-
-	cout << Complex::ToComplex(temp).ToString() << endl;
-	Complex r(4.2, 5.5);
-	Complex s(18.9, 31.7);
-
-	cout << "Testing ToString" << endl;
-	cout << "Complex s: " << s.ToString() << endl;
-	cout << "Complex r: " << r.ToString() << endl;
-
-	cout << "Testing addition (r+s)" << endl;
-	cout << (r + s).ToString() << endl;
-	cout << "Testing addition (r+5)" << endl;
-	cout << (r + 5).ToString() << endl;
-	cout << "Testing addition (r+3.14)" << endl;
-	cout << (r + 3.14).ToString() << endl;
-	cout << "Testing multiplication (r*s)" << endl;
-	cout << (r * s).ToString() << endl;
-	cout << "Testing multiplication (r*5)" << endl;
-	cout << (r * 5).ToString() << endl;
-	cout << "Testing multiplication (r*3.14)" << endl;
-	cout << (r * 3.14).ToString() << endl;
-	cout << "Testing less than (r<s)" << endl;
-	cout << (r < s) << endl;
-	cout << "Testing less than (r<5)" << endl;
-	cout << (r < 5) << endl;
-	cout << "Testing less than (r<9999.98)" << endl;
-	cout << (r < 9999.98) << endl;
-	cout << "Testing IsComplex" << endl;
-
-	string cmxTest1 = "(   +15.123 -  4.1i)";
-	string cmxTest2 = "( -15.123 )";
-	string cmxTest3 = "( -  4.1i)";
-	string cmxTest4 = "(-i)";
-	string cmxTest5 = "(22.12)";
-	cout << cmxTest1 << endl;
-	cout << Complex::IsComplex(cmxTest1) << endl;
-	cout << cmxTest2 << endl;
-	cout << Complex::IsComplex(cmxTest2) << endl;
-	cout << cmxTest3 << endl;
-	cout << Complex::IsComplex(cmxTest3) << endl;
-	cout << cmxTest4 << endl;
-	cout << Complex::IsComplex(cmxTest4) << endl;
-	cout << cmxTest5 << endl;
-	cout << Complex::IsComplex(cmxTest5) << endl;
-}
+//int main() {
+//	string temp = "(i)";
+//	cout << "Type a correctly formatted complex #" << endl;
+//
+//	cout << Complex::ToComplex(temp).ToString() << endl;
+//	Complex r(4.2, 5.5);
+//	Complex s(18.9, 31.7);
+//
+//	cout << "Testing ToString" << endl;
+//	cout << "Complex s: " << s.ToString() << endl;
+//	cout << "Complex r: " << r.ToString() << endl;
+//
+//	cout << "Testing addition (r+s)" << endl;
+//	cout << (r + s).ToString() << endl;
+//	cout << "Testing addition (r+5)" << endl;
+//	cout << (r + 5).ToString() << endl;
+//	cout << "Testing addition (r+3.14)" << endl;
+//	cout << (r + 3.14).ToString() << endl;
+//	cout << "Testing multiplication (r*s)" << endl;
+//	cout << (r * s).ToString() << endl;
+//	cout << "Testing multiplication (r*5)" << endl;
+//	cout << (r * 5).ToString() << endl;
+//	cout << "Testing multiplication (r*3.14)" << endl;
+//	cout << (r * 3.14).ToString() << endl;
+//	cout << "Testing less than (r<s)" << endl;
+//	cout << (r < s) << endl;
+//	cout << "Testing less than (r<5)" << endl;
+//	cout << (r < 5) << endl;
+//	cout << "Testing less than (r<9999.98)" << endl;
+//	cout << (r < 9999.98) << endl;
+//	cout << "Testing IsComplex" << endl;
+//
+//	string cmxTest1 = "(   +15.123 -  4.1i)";
+//	string cmxTest2 = "( -15.123 )";
+//	string cmxTest3 = "( -  4.1i)";
+//	string cmxTest4 = "(-i)";
+//	string cmxTest5 = "(22.12)";
+//	cout << cmxTest1 << endl;
+//	cout << Complex::IsComplex(cmxTest1) << endl;
+//	cout << cmxTest2 << endl;
+//	cout << Complex::IsComplex(cmxTest2) << endl;
+//	cout << cmxTest3 << endl;
+//	cout << Complex::IsComplex(cmxTest3) << endl;
+//	cout << cmxTest4 << endl;
+//	cout << Complex::IsComplex(cmxTest4) << endl;
+//	cout << cmxTest5 << endl;
+//	cout << Complex::IsComplex(cmxTest5) << endl;
+//}
