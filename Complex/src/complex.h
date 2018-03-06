@@ -1,5 +1,9 @@
-#ifndef _RUSEY_HW_2_COMPLEX_H_
-#define _RUSEY_HW_2_COMPLEX_H_
+/* Copyright
+ * Robert Usey
+ * 2018 */
+
+#ifndef _YOUR_USERNAME_HERE_HW_2_5_COMPLEX_H_  // NOLINT
+#define _YOUR_USERNAME_HERE_HW_2_5_COMPLEX_H_  // NOLINT
 
 using namespace std;
 

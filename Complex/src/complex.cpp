@@ -1,9 +1,6 @@
-/*
- * complex.cpp
- *
- *  Created on: Feb 13, 2018
- *      Author: ruusey
- */
+/* Copyright
+ * Robert Usey
+ * 2018 */
 #include <iostream>
 #include <cmath>
 #include "complex.h"
@@ -12,8 +9,8 @@
 #include <exception>
 #include <algorithm>
 #include <string>
-//using namespace std;
 
+static regex cpRegex_("^\\({1}(\\s*)([+|-]*)(\\d)*(\\.)*(\\d)*(\\s)*[+|-]*(\\s)*(\\d)*(\\.)*(\\d)*(\\s)*[i]*(\\s)*\\){1}");
 Complex::Complex() {
 
 	this->r = 0.0;
@@ -112,13 +109,12 @@ const Complex Complex::Mul(const Complex& rhs) const {
 	return temp;
 }
 const Complex Complex::ToComplex(string& in) {
-	//REGEX: VERBATIM TRANSLATION FROM PDF
-	const regex complexMatch(
-				"^\\((\\s)*([+|-]*)(\\d)*(\\.)*(\\d)*(\\s)*[+|-]*(\\s)*(\\d)*(\\.)*(\\d)*(\\s)*[i]*(\\s)*\\)$");
+
 	bool validComplex = false;
 	//SEE IF OUR REGEX MATCHES THE INPUT
 	try {
-		validComplex = regex_match(in, complexMatch);
+		validComplex = regex_match(in, cpRegex_);
+		//IF NOT VALID COMPLEX THROW INVALID ARG EXCEPTION
 		if (!validComplex)
 			throw invalid_argument(in);
 	} catch (const invalid_argument& exception) {
@@ -191,7 +187,7 @@ istream& operator >>(istream &in, Complex &c) {
 }
 const string Complex::ToString() const {
 	if (this->r == 0.0 && this->i == 0.0)
-		return string();
+		return string("(0)");
 	string res = "(";
 
 	char r[to_string(this->r).length() + 1];
@@ -229,7 +225,7 @@ int main() {
 	cin>>temp;
 
 	//bool tr = (r < s);
-	cout << Complex::IsComplex(temp);
+	cout << Complex::ToComplex(temp).ToString();
 }
 
 bool Complex::LT(const Complex& rhs) const {
@@ -262,10 +258,7 @@ bool Complex::operator <(int rhs) const {
 }
 
 bool Complex::IsComplex(const string& in_string) {
-	//REGEX FROM PDF DEFINITIONS
-	const regex complexMatch(
-			"^\\((\\s)*([+|-]*)(\\d)*(\\.)*(\\d)*(\\s)*[+|-]*(\\s)*(\\d)*(\\.)*(\\d)*(\\s)*[i]*(\\s)*\\)$");
-	return regex_match(in_string, complexMatch);
+	return regex_match(in_string, cpRegex_);
 }
 
 bool Complex::IsComplex(istream& in_stream) {
@@ -287,6 +280,7 @@ bool Complex::IsComplex(istream& in_stream) {
 	return IsComplex(complex);
 }
 double Complex::modulus() const {
+	//THAT MOD THING FROM FILE
 	double i_ = this->i * this->i;
 	double r_ = this->r * this->r;
 	return sqrt(r_ + i_);
