@@ -60,7 +60,6 @@
 		<buildTargets>
 			<target name="llist" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
 				<buildTarget>llist</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>

@@ -14,11 +14,15 @@ BUILD = build
 TEST = test
 LIBRARY = lib
 
-llist : $(BUILD)/llist.o $(BUILD)/main.o
+llist : $(BUILD)/alist.o $(BUILD)/llist.o $(BUILD)/main.o
 	$(LINK) $(BINARY)/$@ $^
 
 
-$(BUILD)/llist.o : $(SOURCE)/llist.c $(INCLUDE)/llist.h $(INCLUDE)/bool.h \
+$(BUILD)/llist.o : $(SOURCE)/llist.c $(INCLUDE)/llist.h  $(INCLUDE)/bool.h \
+                         
+	$(COMPILE) $< -o $@
+	
+$(BUILD)/alist.o : $(SOURCE)/alist.c $(INCLUDE)/alist.h $(INCLUDE)/bool.h \
                          
 	$(COMPILE) $< -o $@
 

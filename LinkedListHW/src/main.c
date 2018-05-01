@@ -33,6 +33,7 @@ int main() {
     int loop_loc;
     llist_t *head = loop(size, &loop_loc);
     //print_list(head);
+    //exit(0);
     uint proof_len;
     if (loop_loc == 0) {
         proof_len = size + 1;
@@ -167,8 +168,19 @@ void print_arr(uint *arr, uint len) {
 }
 
 void print_list(llist_t *lst) {
-    printf("[");
-    for (; lst->next != NULL; lst=lst->next) { printf("%d, ", lst->val); }
-    printf("%d]\n", lst->val);
+
+	llist_t *temp = lst;
+	    if (lst != NULL)
+	    {
+	    	printf("[");
+	        do
+	        {
+	            printf("%d ", temp->val);
+	            temp = temp->next;
+	        }
+	        while (temp != lst);
+	    }
+	    printf("]");
+
 }
 
