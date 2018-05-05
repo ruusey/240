@@ -9,7 +9,7 @@ int SensorNet::vals_[SensorNet::k_sensor_count_];
 
 void SensorNet::PowerOn() {
   if (!SensorNet::on_) {
-    srand(123);
+    srand(121241243);
     const int k_order_count = 6;
 	  const SensorType orders[k_order_count][SensorNet::k_sensor_count_] =
 	      { {HUM, PRS, TMP}, {HUM, TMP, PRS,}, {PRS, HUM, TMP}, {PRS, TMP, HUM},
